@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
+                <img src="@item.ImageUrl" alt="avatar" />*
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
