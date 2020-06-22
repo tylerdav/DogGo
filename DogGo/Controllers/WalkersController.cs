@@ -32,15 +32,15 @@ namespace DogGo.Controllers
         {
             try
             {
-            int currentOwnerId = GetCurrentUserId();
-            Owner currentOwner = _ownerRepo.GetOwnerById(currentOwnerId);
-            int currentNeighborhoodId = currentOwner.NeighborhoodId;
-            List<Walker> walkers = _walkerRepo.GetWalkersInNeighborhood(currentNeighborhoodId);
+                int currentOwnerId = GetCurrentUserId();
+                Owner currentOwner = _ownerRepo.GetOwnerById(currentOwnerId);
+                int currentNeighborhoodId = currentOwner.NeighborhoodId;
+                List<Walker> walkers = _walkerRepo.GetWalkersInNeighborhood(currentNeighborhoodId);
 
-            if (currentNeighborhoodId != currentOwner.NeighborhoodId)
-            {
-                return NotFound();
-            }
+                if (currentNeighborhoodId != currentOwner.NeighborhoodId)
+                {
+                    return NotFound();
+                }
                 return View(walkers);
             }
             catch
